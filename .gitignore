@@ -28,3 +28,152 @@ yarn-error.log*
 
 # OS
 Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+*.diag
+
+# Build outputs
+dist
+.out
+.tmp
+
+# IDE and editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+*.out
+*.pid
+*.seed
+*.temp/
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# React specific
+.env
+.env.*
+!.env.example
+*.tgz
+
+# Media files that should not be in version control
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.webm
+*.mkv
+*.m4v
+*.3gp
+
+# Audio files
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+*.wma
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration files that might contain sensitive information
+config.json
+database.json
+*.config.js
+
+# Debug files
+*.debug
+*.stackdump
+
+# React build artifacts
+*.chunk.js
+*.chunk.js.map
+*.js.map
+*.css.map
+
+# NPM cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# FuseBox cache
+.fusebox/
+
+# webpack cache
+.webpack/
+
+# yarn
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/virtual
+.yarn/patches
+.yarn/plugins
+.yarn/releases
+.yarn/sdks
+.yarn/versions
+
+# Mac files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msp
+*.msm
+
+# Linux files
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# IDE specific
+.idea/
+*.iml
+*.iws
+.out/
+.idea_modules/
+
+# VIM
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
