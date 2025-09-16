@@ -35,32 +35,62 @@
 
 /* Car Form Section */
 .car-form-section {
-  background-color: #f8f9fa;
-  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-form-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(26, 60, 108, 0.05);
+}
+
+.car-form-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 107, 53, 0.05);
 }
 
 .car-form-section h2 {
   text-align: center;
   color: #1a3c6c;
   margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .car-form {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(26, 60, 108, 0.1);
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-row {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .form-row .form-group {
@@ -70,16 +100,146 @@
 .car-form input,
 .car-form select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 1rem;
+  border: 2px solid #e1e5eb;
+  border-radius: 8px;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
 }
 
 .car-form input:focus,
 .car-form select:focus {
   outline: none;
   border-color: #1a3c6c;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(26, 60, 108, 0.1);
+}
+
+.car-form input::placeholder {
+  color: #adb5bd;
+}
+
+.file-upload-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #1a3c6c;
+  font-size: 1.1rem;
+}
+
+.file-upload-note {
+  font-weight: normal;
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-left: 0.5rem;
+}
+
+.car-form input[type="file"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #ced4da;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.car-form input[type="file"]:hover {
+  border-color: #1a3c6c;
+  background-color: #e9ecef;
+}
+
+.photo-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #dee2e6;
+}
+
+.no-photos {
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.photo-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  justify-content: flex-start;
+}
+
+.photo-thumbnail {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.thumbnail-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.remove-photo-btn {
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.75rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.remove-photo-btn:hover {
+  color: #fff;
+  background-color: #ff6b35;
+  transform: scale(1.1);
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #ff6b35, #ff8c42);
+  color: white;
+  border: none;
+  padding: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #ff8c42, #ff6b35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
 }
 
 .file-upload-label {
