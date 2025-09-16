@@ -4,7 +4,7 @@ import './Chatbot.css';
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello! I'm your car buying assistant powered by Ollama's mistral-nz-cars model. How can I help you today?", isBot: true }
+    { id: 1, text: "Hello! I'm your car buying assistant. I can help you with selling your damaged car in New Zealand. How can I assist you today?", isBot: true }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +12,12 @@ const Chatbot = () => {
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
+    // Reset to initial message when closing chatbot
+    if (isOpen) {
+      setMessages([
+        { id: 1, text: "Hello! I'm your car buying assistant. I can help you with selling your damaged car in New Zealand. How can I assist you today?", isBot: true }
+      ]);
+    }
   };
 
   const scrollToBottom = () => {
@@ -47,7 +53,26 @@ const Chatbot = () => {
       };
       setMessages(prev => [...prev, botMessage]);
       
-      // Call Ollama API with streaming
+      // Build conversation history for context
+      let conversationHistory = "You are a helpful car buying assistant for a New Zealand car buying service. ";
+      conversationHistory += "The user is looking to sell their damaged car. ";
+      conversationHistory += "Keep your responses concise but helpful.\n\n";
+      
+      // Add previous messages as context (limit to last 6 messages to avoid token limits)
+      const recentMessages = messages.slice(-6);
+      recentMessages.forEach(msg => {
+        if (msg.isBot) {
+          conversationHistory += `Assistant: ${msg.text}\n`;
+        } else {
+          conversationHistory += `User: ${msg.text}\n`;
+        }
+      });
+      
+      // Add current user message
+      conversationHistory += `User: ${inputValue}\n`;
+      conversationHistory += "Assistant: ";
+      
+      // Call Ollama API with streaming and conversation context
       const response = await fetch('http://localhost:11434/api/generate', {
         method: 'POST',
         headers: {
@@ -55,7 +80,7 @@ const Chatbot = () => {
         },
         body: JSON.stringify({
           model: 'mistral-nz-cars', // Using the correct model for this application
-          prompt: inputValue,
+          prompt: conversationHistory,
           stream: true
         })
       });

@@ -9,10 +9,10 @@ import image2 from '../assets/image (2).jpg';
 
 const ImageCarousel = () => {
   const images = [
-    { src: damagedCarImage, alt: 'Damaged car on truck' },
     { src: buyerSellerImage, alt: 'Buyer and seller with damaged car' },
-    { src: chatGptImage1, alt: 'Car buying service' },
     { src: chatGptImage2, alt: 'Car evaluation' },
+    { src: damagedCarImage, alt: 'Damaged car on truck' },
+    { src: chatGptImage1, alt: 'Car buying service' },
     { src: image1, alt: 'Damaged car' },
     { src: image2, alt: 'Car inspection' }
   ];
