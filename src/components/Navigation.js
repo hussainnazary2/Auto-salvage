@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Chatbot from './Chatbot';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -28,6 +29,7 @@ const Navigation = () => {
           <li><Link to="/login" onClick={toggleMenu}>Login</Link></li>
         </ul>
       </div>
+      <Chatbot />
     </nav>
   );
 };

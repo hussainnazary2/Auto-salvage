@@ -2,6 +2,7 @@
   background-color: #1a3c6c;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .nav-container {
@@ -77,6 +78,7 @@
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0,0,0,0.05);
     padding: 2rem 0;
+    z-index: 999;
   }
   
   .nav-links.active {
