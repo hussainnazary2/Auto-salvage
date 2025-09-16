@@ -125,12 +125,16 @@ const Home = () => {
         <div className="hero-content">
           <h1>Sell Your Damaged Car in New Zealand – Fast, Easy, Cash Paid</h1>
           <p>We buy cars in any condition. Free pickup, instant payment, no hassle.</p>
+          <a href="#car-form" className="sell-now-button">
+            <span className="money-icon">💰</span>
+            Sell Now
+          </a>
           <ImageCarousel />
         </div>
       </section>
 
       {/* Car Submission Form */}
-      <section className="car-form-section">
+      <section className="car-form-section" id="car-form">
         <div className="container">
           <h2>Get a Quote for Your Car</h2>
           <form onSubmit={handleSubmit} className="car-form">
