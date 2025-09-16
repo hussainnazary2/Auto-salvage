@@ -79,6 +79,87 @@
   border-color: #1a3c6c;
 }
 
+.file-upload-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #1a3c6c;
+}
+
+.file-upload-note {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.car-form input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.photo-preview {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.no-photos {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.photo-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: flex-start;
+}
+
+.photo-thumbnail {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thumbnail-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.remove-photo-btn {
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-photo-btn:hover {
+  color: #e55a2b;
+}
+
 .submit-btn {
   width: 100%;
   background-color: #ff6b35;
