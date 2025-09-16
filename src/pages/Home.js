@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
+import ImageCarousel from '../components/ImageCarousel';
 import buyerSellerImage from '../assets/buyer+seller+damaged car.png';
-import damagedCarImage from '../assets/damaged car on truck.png';
 import './Home.css';
 
 const Home = () => {
@@ -125,7 +125,7 @@ const Home = () => {
         <div className="hero-content">
           <h1>Sell Your Damaged Car in New Zealand – Fast, Easy, Cash Paid</h1>
           <p>We buy cars in any condition. Free pickup, instant payment, no hassle.</p>
-          <img src={damagedCarImage} alt="Damaged car on truck" className="hero-image" />
+          <ImageCarousel />
         </div>
       </section>
 
