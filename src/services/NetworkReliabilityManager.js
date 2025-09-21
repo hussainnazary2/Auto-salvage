@@ -49,8 +49,7 @@ class NetworkReliabilityManager {
       timeout = 30000,
       priority = 'normal', // 'high', 'normal', 'low'
       onTimeout = null,
-      onProgress = null,
-      retryOnFailure = true
+      onProgress = null
     } = options;
 
     this.stats.totalRequests++;
@@ -404,7 +403,7 @@ class NetworkReliabilityManager {
     this.clearQueue('Service shutting down');
     
     // Clear all active timeouts
-    for (const [requestId, timeouts] of this.activeTimeouts) {
+    for (const requestId of this.activeTimeouts.keys()) {
       this.cleanupTimeouts(requestId);
     }
     

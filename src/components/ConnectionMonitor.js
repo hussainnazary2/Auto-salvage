@@ -103,14 +103,14 @@ const ConnectionMonitor = ({
 
     // Note: Removed periodic status updates to prevent excessive requests
     // Status will be updated when user interacts with the chatbot or manually reconnects
-  }, [ollamaService]); // Removed updateConnectionStatus dependency
+  }, [ollamaService, updateConnectionStatus]);
 
   // Force update when ollamaService changes (for testing)
   useEffect(() => {
     if (ollamaService) {
       updateConnectionStatus();
     }
-  }, [ollamaService]); // Removed updateConnectionStatus dependency
+  }, [ollamaService, updateConnectionStatus]);
 
   // Get status display information
   const getStatusInfo = () => {

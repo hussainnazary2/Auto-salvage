@@ -46,7 +46,7 @@ const Dashboard = () => {
     } else {
       setLeads(dummyLeads);
     }
-  }, [navigate]);
+  }, [navigate, dummyLeads]);
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
