@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -13,7 +14,10 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-logo">
-          <Link to="/">DamagedCarBuyers.nz</Link>
+          <Link to="/">
+            <img src={logo} alt="Quality Part Auto Dismantler" className="logo-image" />
+            <span className="company-name">Quality Part Auto Dismantler</span>
+          </Link>
         </div>
         <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <div className="bar"></div>

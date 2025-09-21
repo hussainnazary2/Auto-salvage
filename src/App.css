@@ -157,6 +157,7 @@ textarea {
   background-color: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
+  font-weight: 600;
 }
 
 .btn-outline:hover {
