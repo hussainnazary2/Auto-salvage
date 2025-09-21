@@ -17,6 +17,7 @@ const Home = () => {
   });
   const [photos, setPhotos] = useState([]);
   const [photoPreviews, setPhotoPreviews] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -62,8 +63,13 @@ const Home = () => {
     setPhotos(prevPhotos => prevPhotos.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     console.log('Form submitted:', formData);
     console.log('Photos uploaded:', photos);
     
@@ -103,6 +109,7 @@ const Home = () => {
     */
     
     alert('Thank you for your submission! We will contact you shortly.');
+    
     // Reset form
     setFormData({
       name: '',
@@ -115,6 +122,7 @@ const Home = () => {
     });
     setPhotos([]);
     setPhotoPreviews([]);
+    setIsSubmitting(false);
   };
 
   return (
@@ -127,6 +135,20 @@ const Home = () => {
         <div className="hero-content">
           <h1>Sell Your Damaged Car in New Zealand – Fast, Easy, Cash Paid</h1>
           <p>We buy cars in any condition. Free pickup, instant payment, no hassle.</p>
+          <div className="hero-actions">
+            <button 
+              className="btn btn-accent btn-lg hero-cta"
+              onClick={() => document.querySelector('.car-form-section').scrollIntoView({ behavior: 'smooth' })}
+            >
+              Get My Quote Now
+            </button>
+            <button 
+              className="btn btn-outline btn-lg hero-cta-secondary"
+              onClick={() => document.querySelector('#how-it-works').scrollIntoView({ behavior: 'smooth' })}
+            >
+              How It Works
+            </button>
+          </div>
           <ImageCarousel />
         </div>
       </section>
@@ -251,7 +273,16 @@ const Home = () => {
                 )}
               </div>
             </div>
-            <button type="submit" className="submit-btn">Get My Quote</button>
+            <button type="submit" className="submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <span className="loading-spinner"></span>
+                  Processing...
+                </>
+              ) : (
+                'Get My Quote'
+              )}
+            </button>
           </form>
         </div>
       </section>

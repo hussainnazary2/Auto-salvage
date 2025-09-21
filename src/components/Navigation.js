@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Chatbot from './Chatbot';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -16,7 +15,7 @@ const Navigation = () => {
         <div className="nav-logo">
           <Link to="/">DamagedCarBuyers.nz</Link>
         </div>
-        <div className="menu-icon" onClick={toggleMenu}>
+        <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
@@ -29,7 +28,6 @@ const Navigation = () => {
           <li><Link to="/login" onClick={toggleMenu}>Login</Link></li>
         </ul>
       </div>
-      <Chatbot />
     </nav>
   );
 };

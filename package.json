@@ -17,8 +17,22 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:production": "cross-env NODE_ENV=production react-scripts build",
+    "build:vercel": "npm run build:production",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:ci": "react-scripts test --coverage --ci --watchAll=false",
+    "eject": "react-scripts eject",
+    "vercel:dev": "vercel dev",
+    "vercel:deploy": "vercel --prod",
+    "vercel:preview": "vercel",
+    "env:check": "node scripts/check-env.js",
+    "prebuild": "npm run env:check",
+    "deploy:preview": "node scripts/deploy.js preview",
+    "deploy:production": "node scripts/deploy.js production",
+    "test:deployment": "node scripts/test-deployment.js",
+    "validate:deployment": "node scripts/validate-deployment-config.js",
+    "test:ollama": "node scripts/test-ollama-connection.js",
+    "test:env": "node scripts/test-react-env.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.2"
   }
 }
