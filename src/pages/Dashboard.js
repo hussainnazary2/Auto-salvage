@@ -8,18 +8,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [leads, setLeads] = useState([]);
   
-  // Dummy data for leads
-  const dummyLeads = [
-    { id: 1, name: 'John Smith', phone: '021 123 4567', email: 'john@example.com', make: 'Toyota', model: 'Corolla', condition: 'Running', source: 'Facebook' },
-    { id: 2, name: 'Sarah Johnson', phone: '022 234 5678', email: 'sarah@example.com', make: 'Honda', model: 'Civic', condition: 'Not Running', source: 'Google' },
-    { id: 3, name: 'Mike Brown', phone: '027 345 6789', email: 'mike@example.com', make: 'Ford', model: 'Falcon', condition: 'Scrap', source: 'Instagram' },
-    { id: 4, name: 'Emma Wilson', phone: '021 456 7890', email: 'emma@example.com', make: 'Nissan', model: 'Skyline', condition: 'Running', source: 'Facebook' },
-    { id: 5, name: 'David Lee', phone: '022 567 8901', email: 'david@example.com', make: 'Mazda', model: 'RX-7', condition: 'Parted Out', source: 'Other' },
-    { id: 6, name: 'Lisa Taylor', phone: '027 678 9012', email: 'lisa@example.com', make: 'Subaru', model: 'Impreza', condition: 'Not Running', source: 'Google' },
-    { id: 7, name: 'James Davis', phone: '021 789 0123', email: 'james@example.com', make: 'Mitsubishi', model: 'Lancer', condition: 'Running', source: 'Facebook' },
-    { id: 8, name: 'Anna White', phone: '022 890 1234', email: 'anna@example.com', make: 'Holden', model: 'Commodore', condition: 'Scrap', source: 'Instagram' }
-  ];
-  
   // Data for traffic sources chart
   const trafficData = [
     { name: 'Facebook', value: 3 },
